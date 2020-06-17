@@ -5,12 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Courses</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add New Courses</a>
 </p>
-<table class="table">
+<table class="table sortable">
     <thead>
         <tr>
             <th>
@@ -22,10 +22,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.Coordinator)
             </th>
-            <th>
+            <th class="text-right">
                 @Html.DisplayNameFor(model => model.Fees)
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>

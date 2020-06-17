@@ -17,13 +17,15 @@ namespace Assignment1.Models
         [Required]
         [StringLength(100)]
         public string Name { get; set; }
-        [Required]
+        [Required (ErrorMessage = "Course Name is required")]
         [StringLength(50)]
         public string DelieveryMode { get; set; }
         [Required]
         [StringLength(50)]
         public string Coordinator { get; set; }
         [Column(TypeName = "decimal(8, 2)")]
+        [Range (0,999999, ErrorMessage = "Fees must be between 0 and 999999")]
+        [DisplayFormat(DataFormatString = "{0:c}")]
         public decimal Fees { get; set; }
 
         [InverseProperty("Course")]

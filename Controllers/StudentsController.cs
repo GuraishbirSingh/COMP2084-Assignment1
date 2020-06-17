@@ -47,7 +47,7 @@ namespace Assignment1.Controllers
         // GET: Students/Create
         public IActionResult Create()
         {
-            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "Coordinator");
+            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseId");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace Assignment1.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "Coordinator", students.CourseId);
+            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseId", students.CourseId);
             return View(students);
         }
 
@@ -81,7 +81,7 @@ namespace Assignment1.Controllers
             {
                 return NotFound();
             }
-            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "Coordinator", students.CourseId);
+            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseId", students.CourseId);
             return View(students);
         }
 
@@ -117,7 +117,7 @@ namespace Assignment1.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "Coordinator", students.CourseId);
+            ViewData["CourseId"] = new SelectList(_context.Courses, "CourseId", "CourseId", students.CourseId);
             return View(students);
         }
 
