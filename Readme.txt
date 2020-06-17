@@ -1,6 +1,6 @@
 ﻿This project is basically on different records stored in website of Georgian College.
 
-We have two different tables in our database: </h4>
+We have two different tables in our database: 
 1.Students Table to store all the informations of the students enrolled in College.
 2. Courses Table to store information about all the courses available in the college.
 
