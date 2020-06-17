@@ -7,6 +7,11 @@ We have two different tables in our database: </h4>
 CRUD Functionality
 We can add new information, show details, edit information and delete information from tables by using CRUD functionality.
 
+Tables are customized:
+Sorttable javascript Added
+Dollar sign added to Fees column
+Required messages added
+
 Sources
 Source of Image used in Nav Bar : https://www.georgiancollege.ca/academics/academic-and-career-preparation/
 Source of Bootstrap used: https://bootswatch.com/> 
