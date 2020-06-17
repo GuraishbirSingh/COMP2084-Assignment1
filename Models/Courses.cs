@@ -23,7 +23,7 @@ namespace Assignment1.Models
         [Required]
         [StringLength(50)]
         public string Coordinator { get; set; }
-        [Column(TypeName = "decimal(6, 2)")]
+        [Column(TypeName = "decimal(8, 2)")]
         public decimal Fees { get; set; }
 
         [InverseProperty("Course")]

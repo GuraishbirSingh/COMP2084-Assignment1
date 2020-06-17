@@ -16,8 +16,6 @@ namespace Assignment1.Models
         public string Address { get; set; }
         [StringLength(50)]
         public string Nationality { get; set; }
-        [StringLength(255)]
-        public string Photo { get; set; }
         public int CourseId { get; set; }
 
         [ForeignKey(nameof(CourseId))]

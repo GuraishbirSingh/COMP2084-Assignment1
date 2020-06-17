@@ -31,8 +31,6 @@ namespace Assignment1.Models
         {
             modelBuilder.Entity<Courses>(entity =>
             {
-                entity.Property(e => e.CourseId).ValueGeneratedNever();
-
                 entity.Property(e => e.Coordinator).IsUnicode(false);
 
                 entity.Property(e => e.DelieveryMode).IsUnicode(false);
@@ -47,8 +45,6 @@ namespace Assignment1.Models
                 entity.Property(e => e.Name).IsUnicode(false);
 
                 entity.Property(e => e.Nationality).IsUnicode(false);
-
-                entity.Property(e => e.Photo).IsUnicode(false);
 
                 entity.HasOne(d => d.Course)
                     .WithMany(p => p.Students)
