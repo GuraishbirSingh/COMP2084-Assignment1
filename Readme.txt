@@ -12,7 +12,7 @@ Sorttable javascript Added
 Dollar sign added to Fees column
 Required messages added
 
-Sources
+Sources:
 Source of Image used in Nav Bar : https://www.georgiancollege.ca/academics/academic-and-career-preparation/
 Source of Bootstrap used: https://bootswatch.com/> 
 Source of Sorttable javascript : https://kryogenix.org/code/browser/sorttable/
