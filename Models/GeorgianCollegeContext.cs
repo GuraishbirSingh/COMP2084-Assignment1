@@ -1,10 +1,11 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Assignment1.Models
 {
-    public partial class GeorgianCollegeContext : DbContext
+    public partial class GeorgianCollegeContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
         public GeorgianCollegeContext()
         {
@@ -22,13 +23,15 @@ namespace Assignment1.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=(local);Initial Catalog=Georgian College;Integrated Security=True");
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+//                optionsBuilder.UseSqlServer("Data Source=(local);Initial Catalog=Georgian College;Integrated Security=True");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Courses>(entity =>
             {
                 entity.Property(e => e.Coordinator).IsUnicode(false);
