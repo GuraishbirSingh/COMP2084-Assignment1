@@ -12,6 +12,20 @@ Sorttable javascript Added
 Dollar sign added to Fees column
 Required messages added
 
+
+Assignment 2:
+Authentication is added to Courses and Students
+
+Student Table:
+Anonymous person will not able to see Student column in navbar, while employee can see the student list 
+as well as details of all those students, but will no able to add new student, remove or edit previous. While admin has 
+full access to add new student, edit or delete previous one in list.
+
+Course Table:
+Course column is shown to everyone, but anonymous persons will not able to see coordinator name, 
+all the edit, details and delete actions. While employee can see all the details of course table but not able to add or delete 
+courses. And admin has full access to add new courses, delete and edit all the courses in table.
+
 Sources:
 Source of Image used in Nav Bar : https://www.georgiancollege.ca/academics/academic-and-career-preparation/
 Source of Bootstrap used: https://bootswatch.com/> 
