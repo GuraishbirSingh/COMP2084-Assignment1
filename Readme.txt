@@ -23,7 +23,7 @@ full access to add new student, edit or delete previous one in list.
 
 Course Table:
 Course column is shown to everyone, but anonymous persons will not able to see coordinator name, 
-all the edit, details and delete actions. While employee can see all the details of course table but not able to add or delete 
+all the edit, details and delete actions(not even action Header). While employee can see all the details of course table but not able to add or delete 
 courses. And admin has full access to add new courses, delete and edit all the courses in table.
 
 Sources:
