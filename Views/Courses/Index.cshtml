@@ -6,49 +6,61 @@
 }
 
 <h1>Courses</h1>
-
-<p>
-    <a asp-action="Create">Add New Courses</a>
-</p>
-<table class="table sortable">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DelieveryMode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Coordinator)
-            </th>
-            <th class="text-right">
-                @Html.DisplayNameFor(model => model.Fees)
-            </th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DelieveryMode)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Coordinator)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fees)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CourseId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
-            </td>
-        </tr>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create">Add New Courses</a>
+    </p>}
+    <table class="table sortable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DelieveryMode)
+                </th>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <th>
+                        @Html.DisplayNameFor(model => model.Coordinator)
+                    </th>}
+                    <th class="text-right">
+                        @Html.DisplayNameFor(model => model.Fees)
+                    </th>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <th>Actions</th>
+                    }
+                </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DelieveryMode)
+                </td>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Coordinator)
+                    </td>}
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fees)
+                    </td>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.CourseId">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
+                        </td>
 }
-    </tbody>
-</table>
+                </tr>
+            }
+        </tbody>
+    </table>

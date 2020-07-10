@@ -31,8 +31,16 @@ namespace Assignment1
             services.AddDbContext<GeorgianCollegeContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<GeorgianCollegeContext>();
+
+            services.AddIdentity<ApplicationUser, ApplicationRole>()
+                .AddDefaultUI()
+                .AddRoles<ApplicationRole>()
+                .AddRoleManager<RoleManager<ApplicationRole>>()
+                .AddEntityFrameworkStores<GeorgianCollegeContext>()
+                .AddDefaultTokenProviders();
+            
+            //services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            //    .AddEntityFrameworkStores<GeorgianCollegeContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
